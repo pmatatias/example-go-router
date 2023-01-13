@@ -2,12 +2,12 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'package:bookstore/src/screens/author_layout.dart';
 import 'package:flutter/material.dart';
 
 import '../routing.dart';
 import '../screens/settings.dart';
 import '../widgets/fade_transition_page.dart';
-import 'authors.dart';
 import 'books.dart';
 import 'scaffold.dart';
 
@@ -32,7 +32,7 @@ class BookstoreScaffoldBody extends StatelessWidget {
         if (currentRoute.pathTemplate.startsWith('/authors'))
           const FadeTransitionPage<void>(
             key: ValueKey('authors'),
-            child: AuthorsScreen(),
+            child: AuthorLayout(),
           )
         else if (currentRoute.pathTemplate.startsWith('/settings'))
           const FadeTransitionPage<void>(

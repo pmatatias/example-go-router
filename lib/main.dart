@@ -6,10 +6,12 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:url_strategy/url_strategy.dart';
 import 'package:window_size/window_size.dart';
 
 import 'src/app.dart';
+
+import '/non_web_url_strategy.dart'
+    if (dart.library.html) '/web_url_strategy.dart';
 
 void main() {
   // Use package:url_strategy until this pull request is released:
@@ -20,7 +22,8 @@ void main() {
   // server to redirect all paths to index.html.
   //
   // On mobile platforms, both functions are no-ops.
-  setHashUrlStrategy();
+  // setHashUrlStrategy();
+  configureUrl();
   // setPathUrlStrategy();
 
   setupWindow();
